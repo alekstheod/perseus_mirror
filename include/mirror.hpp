@@ -23,7 +23,7 @@ namespace perseus {
             return value;
         }
 
-        explicit operator M&() {
+        operator M&() {
             return mirror;
         }
 

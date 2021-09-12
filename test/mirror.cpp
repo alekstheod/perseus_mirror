@@ -40,13 +40,17 @@ namespace {
             WHEN("The deprecated variable is set") {
                 obj.x = 33.F;
                 THEN("The new variable is updated") {
-                    REQUIRE(int(obj.position.x) == 3300);
+                    int value = obj.position.x;
+                    REQUIRE(value == 3300);
                 }
             }
             WHEN("The new variable is set") {
                 obj.x = 33.F;
-                THEN("The deprecated variable is updated") {
-                    REQUIRE(float(obj.x) == 33.F);
+                THEN("The deprecated variable is updated")
+
+                {
+                    float value = obj.x;
+                    REQUIRE(value == 33.F);
                 }
             }
         }
